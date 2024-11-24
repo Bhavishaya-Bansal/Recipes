@@ -50,6 +50,7 @@ export const Home = () => {
 
   return (
     <div>
+      <h1>Hi</h1>
       <h1>Recipes</h1>
       <ul>
         {recipes.map((recipe) => (
