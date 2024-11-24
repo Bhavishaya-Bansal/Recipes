@@ -23,7 +23,8 @@ const Login = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/auth/login", {
+      // const response = await axios.post("http://localhost:3001/auth/login", {
+      const response = await axios.post("https://recipes-570a.onrender.com/auth/login", {
         username,
         password,
       });
@@ -57,7 +58,8 @@ const Register = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      axios.post("http://localhost:3001/auth/register", { username, password });
+      // axios.post("http://localhost:3001/auth/register", { username, password });
+      axios.post("https://recipes-570a.onrender.com/auth/register", { username, password });
       alert("Registered successfully! You can login now.");
     } catch (err) {
       console.log(err);

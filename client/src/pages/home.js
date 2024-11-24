@@ -12,7 +12,8 @@ export const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/recipes");
+        // const response = await axios.get("http://localhost:3001/recipes");
+        const response = await axios.get("https://recipes-570a.onrender.com/recipes");
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
@@ -22,7 +23,8 @@ export const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          // `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+          `https://recipes-570a.onrender.com/recipes/savedRecipes/ids/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
@@ -36,7 +38,8 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("http://localhost:3001/recipes", {
+      // const response = await axios.put("http://localhost:3001/recipes", {
+      const response = await axios.put("https://recipes-570a.onrender.com/recipes", {
         recipeID,
         userID,
       });
@@ -50,7 +53,6 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Hi</h1>
       <h1>Recipes</h1>
       <ul>
         {recipes.map((recipe) => (
